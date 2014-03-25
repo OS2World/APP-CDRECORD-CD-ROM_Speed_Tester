@@ -1,0 +1,72 @@
+CD-ROM Speed Tester 1.01  (C) 1998-1999 Samuel Audet <guardia@cam.org>
+
+Syntax:
+   testspeed <cd drive letter> [/c <bogus cache size in kB>]
+             [/t <track,track,...>] [/s <fake cd writing speed>]
+
+The default bogus cache size is 4096 kB.  By default, all tracks are
+tested.  The default fake CD writing speed is 4x.
+
+Description
+===========
+
+This little utility was made because my brand new Teac CD-R55S doesn't
+support test mode (or RSJ doesn't support its test mode).  Since the only
+real problem when no test mode is available is the read test (the write
+test will always succeed unless the CD was bad is the first place and this
+you never know until you actually write to the CD), and since HD are always
+fast enough, only duplicating CD tracks remains gloomy if not properly
+tested. Even if you have a brand spanking new 40x drive, if your CD has a
+nice big scratch right in the middle, you might never get more than 2x from
+one of the tracks on it, even if it's only for 1 second, it can be crucial.
+You will not know about this before it's too late (ie.: you get a brand new
+frisbee), or before using the test mode or this CD-ROM Speed Tester.
+
+This utility will fake a read cache.  If you use an 8 megs cache in your
+CD-R software, specify /c 8096 on the command line and the tester will take
+in account in its speed calculation the size of the cache, although it
+never actually uses one.
+
+Reading CD-DA does no dejittering.  If you need dejittering, it is usually
+too slow to do CD->CD copy anyway.  Use another utility than your CD-R
+software to grab the track on your HD, and write it back to a blank CD.
+
+If the lowest speed is 4.1x for example, I wouldn't try to copy at 4x,
+unless the area is very specific and you can come out of it without hitting
+the bottom using a huge cache.  Also take in account that if your CD-ROM
+drives are not bus mastered, your CPU might be overloaded during copy which
+means CD-ROM Speed Tester might report higher transfer than your CPU is
+capable of when writing at the same time in your CD-R software.
+
+Voila, have fun!
+
+
+History
+=======
+
+1.05 - January 30, 1999
+----
+
+- Modified readcd to be CTCDROM.DMD compatible (This CD drive manager of
+  Unite CD Maker doesn't want to read in the CODE segment, so I had to
+  define local variables for the parameter)
+- Tracks are now read in order and can be tested multiple times in a row or not.
+- Hopefully fixed most screwed up display.
+
+
+Contacting the Author
+=====================
+If you have any suggestions, comments or bug reports, please let me know.
+
+Samuel Audet
+
+E-mail:      guardia@cam.org
+Homepage:    http://www.cam.org/~guardia
+IRC nick:    Guardian_ (be sure it's me before starting asking questions though)
+
+Snail Mail:
+
+   377, rue D'Argenteuil
+   Laval, Quebec
+   H7N 1P7   CANADA
+
